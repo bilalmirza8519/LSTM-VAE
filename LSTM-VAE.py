@@ -14,9 +14,10 @@ from keras import backend as K
 
 #define variables
 latent_dim=3
+Intermediate_dim=6
 nb_epoch=1000
 batch_size=100
-Intermediate_dim=6
+optimizer='adadelta'
 #X is the data matrix
 
 #encoder LSTM
@@ -56,6 +57,5 @@ v_autoencoder = Model(inputs, decoded)
 encoder = Model(inputs, z_mean)  
 v_autoencoder.summary()
 
-
-v_autoencoder.compile(optimizer='adadelta', loss=vae_loss)
+v_autoencoder.compile(optimizer=optimizer, loss=vae_loss)
 v_autoencoder.fit(X,X,nb_epoch=nb_epoch,batch_size=batch_size)  
