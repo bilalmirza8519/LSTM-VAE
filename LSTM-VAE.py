@@ -16,11 +16,12 @@ from keras import backend as K
 latent_dim=3
 nb_epoch=1000
 batch_size=100
+Intermediate_dim=6
 #X is the data matrix
 
 #encoder LSTM
 inputs = Input(shape=(7, 1), name='InputTimeSeries')  #(timesteps, input_dim)
-encoded = LSTM(6, name='EncoderLSTM')(inputs) # intermediate dimension
+encoded = LSTM(Intermediate_dim, name='EncoderLSTM')(inputs) # intermediate dimension
 
 #Creating mean and sigma vectors
 z_mean = Dense(latent_dim, name='MeanVector' )(encoded)
@@ -46,7 +47,7 @@ def vae_loss(inputs, decoded):
 
 #decoder LSTM
 decoded = RepeatVector(7, name='EmbeddingtoTimeSeries')(z) #timesteps
-decoded = LSTM(6,name='DecoderLSTM1', return_sequences=True)(decoded) #intermediate dimensions
+decoded = LSTM(Intermediate_dim,name='DecoderLSTM1', return_sequences=True)(decoded) #intermediate dimensions
 decoded = LSTM(1,name='DecoderLSTM2', return_sequences=True)(decoded) #input_dim
 
 #decoded=TimeDistributed(Dense(1, name='Wrapper'), name='TimeDistributed')(decoded)  
