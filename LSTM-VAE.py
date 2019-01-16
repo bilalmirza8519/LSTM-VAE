@@ -55,7 +55,7 @@ decoded = LSTM(1,name='DecoderLSTM2', return_sequences=True)(decoded) #input_dim
 
 v_autoencoder = Model(inputs, decoded)
 encoder = Model(inputs, z_mean)  
-v_autoencoder.summary()
+#v_autoencoder.summary()
 
 v_autoencoder.compile(optimizer=optimizer, loss=vae_loss)
 v_autoencoder.fit(X,X,nb_epoch=nb_epoch,batch_size=batch_size)  
