@@ -3,4 +3,4 @@ Unsupervised Deep Learning for Multi-Omics
 
 This is a keras code for LSTM-based variational autoencoder (LSTM-VAE). LSTM-VAE was employed to extract 
 low-dimensional embeddings from time-series multi-omics data. The embeddings were fed to K-means 
-clustering algorithm so group molecules based on their temporal patterns. Please refer to the figure LSTM-VAE.jpg 
+clustering algorithm to group molecules based on their temporal patterns. Please refer to the figure LSTM-VAE.jpg 
