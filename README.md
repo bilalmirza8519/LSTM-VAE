@@ -7,4 +7,4 @@ clustering algorithm to group molecules based on their temporal patterns. Please
 
 Please cite the following paper
 
-Chung NC & Mirza B (joint first authors), Choi H, Wang J, Wang D, Ping P, Wang W. Unsupervised Classification of Multi-Omics Data during Cardiac Remodeling using Deep Learning. Methods. 2019 Mar 7.
+Chung NC & Mirza B (joint first authors), Choi H, Wang J, Wang D, Ping P, Wang W. "Unsupervised Classification of Multi-Omics Data during Cardiac Remodeling using Deep Learning". Methods. 2019 Mar 7.
